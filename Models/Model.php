@@ -202,4 +202,31 @@ class Model
         $r->execute();
     }
 
+    public function get_traitement_insert_fournisseur()
+    {
+        $code = $_POST['code'];
+        $rsociale = $_POST['rsociale'];
+        $rue = $_POST['rue'];
+        $cp = $_POST['cp'];
+        $localite = $_POST['localite'];
+        $pays = $_POST['pays'];
+        $tel = $_POST['tel'];
+        $lien = $_POST['url'];
+        $email = $_POST['email'];
+        $fax = $_POST['fax'];
+        $r = $this->bd->prepare("INSERT INTO `fournisseur`(`code_fournisseur`, `raison_sociale`, `rue_fournisseur`, `code_postal`, `localite`, `pays`, `tel_fournisseur`, `url_fournisseur`, `email_fournisseur`, `fax_fournisseur`) 
+        VALUES (:code, :rsociale, :rue, :cp, :localite, :pays, :tel, :lien, :email, :fax)");
+        $r->bindParam(':code', $code);
+        $r->bindParam(':rsociale', $rsociale);
+        $r->bindParam(':rue', $rue);
+        $r->bindParam(':cp', $cp);
+        $r->bindParam(':localite', $localite);
+        $r->bindParam(':pays', $pays);
+        $r->bindParam(':tel', $tel);
+        $r->bindParam(':lien', $lien);
+        $r->bindParam(':email', $email);
+        $r->bindParam(':fax', $fax);
+        $r->execute();
+    }
+
 }

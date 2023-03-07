@@ -25,6 +25,20 @@ class Controller_fournisseur extends Controller
         $this->render("insert_fournisseur");
     }
 
+    public function action_traitement_insert_fournisseur()
+    {
+
+        if (isset($_POST['submit'])) {
+            $m = Model::get_model();
+            $m->get_traitement_insert_fournisseur();
+            // $data = ["add_livre" => $m->get_add_livre(),"position" => 1];
+            $data = ["fournisseurs" => $m->get_all_fournisseurs()];
+            $this->render("all_fournisseurs", $data);
+        } else {
+            $this->render("insert_fournisseur");
+        }
+    }
+
     //* Select affichant toutes les raisons sociales
     public function action_all_raison_sociale()
     {

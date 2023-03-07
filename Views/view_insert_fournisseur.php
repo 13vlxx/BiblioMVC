@@ -1,30 +1,28 @@
 <div class="form">
-    <h1>Page d'ajout d'un livre</h1>
-    <h2 id="ajl">Ajouter un livre</h2>
-    <form action="?controller=livre&action=traitement_insert_livre" method="post">
-        <label for="isbn">ISBN</label>
-        <input required id="isbn" type="text" name="isbn" /> <br />
-        <label for="titree">Titre</label>
-        <input required id="titree" type="text" name="titre" /> <br />
-        <label for="theme">Thème</label>
-        <input required id="theme" type="text" name="theme" /> <br />
-        <label for="nbpages">Nb pages</label>
-        <input required id="nbpages" type="text" name="nbpages" />
+    <h1>Page d'ajout d'un fournisseur</h1>
+    <h2 id="ajl">Ajouter un Fournisseur</h2>
+    <form action="?controller=fournisseur&action=traitement_insert_fournisseur" method="post">
+        <label for="code">Code</label>
+        <input required id="rsociale" type="text" name="code" /> <br />
+        <label for="rsociale">Raison sociale</label>
+        <input required id="rsociale" type="text" name="rsociale" /> <br />
+        <label for="rue">Rue fournisseur</label>
+        <input required id="rue" type="text" name="rue" />
         <br />
-        <label for="format">Format</label>
-        <input required id="format" type="text" name="format" /> <br />
-        <label for="nom">Nom auteur</label>
-        <input required id="nom" type="text" name="nom" /> <br />
-        <label for="prenom">Prénom auteur</label>
-        <input required id="prenom" type="text" name="prenom" /> <br />
-        <label for="editeur">Éditeur</label>
-        <input required id="editeur" type="text" name="editeur" /> <br />
-        <label for="annee">Année édition</label>
-        <input required id="annee" type="text" name="annee" /> <br />
-        <label for="prix">Prix</label>
-        <input required id="prix" type="text" name="prix" /> <br />
-        <label for="langue">Langue</label>
-        <input required id="langue" type="text" name="langue" /> <br />
+        <label for="cp">Code postal</label>
+        <input required id="cp" type="text" name="cp" /> <br />
+        <label for="localite">Localité</label>
+        <input required id="localite" type="text" name="localite" /> <br />
+        <label for="pays">Pays</label>
+        <input required id="pays" type="text" name="pays" /> <br />
+        <label for="tel">Tel</label>
+        <input required id="tel" type="text" name="tel" /> <br />
+        <label for="url">URL</label>
+        <input required id="url" type="text" name="url" /> <br />
+        <label for="email">E-mail</label>
+        <input required id="email" type="text" name="email" /> <br />
+        <label for="fax">Fax</label>
+        <input required id="fax" type="text" name="fax" /> <br />
         <div class="submit">
             <input type="submit" name="submit" value="Ajouter" />
         </div>

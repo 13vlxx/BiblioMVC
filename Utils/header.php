@@ -30,7 +30,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="?controller=fournisseur&action=all_fournisseurs">Tous les
                         fournisseurs</a>
-                    <a class="dropdown-item" href="?controller=fournisseur&action=insert_livre">Ajouter un
+                    <a class="dropdown-item" href="?controller=fournisseur&action=insert_fournisseur">Ajouter un
                         fournisseur</a>
                     <a class="dropdown-item" href="?controller=fournisseur&action=all_raison_sociale">Par raison
                         sociale</a>
