@@ -202,6 +202,7 @@ class Model
         $r->execute();
     }
 
+    //* Inserer un fournisseur
     public function get_traitement_insert_fournisseur()
     {
         $code = $_POST['code'];
@@ -227,6 +228,16 @@ class Model
         $r->bindParam(':email', $email);
         $r->bindParam(':fax', $fax);
         $r->execute();
+    }
+
+    public function get_all_commandes()
+    {
+
+        $r = $this->bd->prepare("SELECT * FROM commande");
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+
     }
 
 }
