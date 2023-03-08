@@ -22,6 +22,7 @@ class Model
 
     }
 
+
     // get_model()
 
     public static function get_model()
@@ -40,62 +41,6 @@ class Model
 
         return $r->fetchAll(PDO::FETCH_OBJ);
 
-    }
-
-    //* Supprimer un livre
-    public function get_delete_livre($id)
-    {
-        $id = $_GET['id'];
-        $r = $this->bd->prepare("DELETE FROM livres WHERE id = :id");
-        $r->bindParam(':id', $id);
-        $r->execute();
-
-        return $r->fetchAll(PDO::FETCH_OBJ);
-
-    }
-
-    //* Formulaire de modification d'livre
-    public function get_edit_livre($id)
-    {
-        $id = $_GET['id'];
-        $r = $this->bd->prepare("SELECT * FROM `livres` WHERE id = :id");
-        $r->bindParam(':id', $id);
-        $r->execute();
-
-        return $r->fetchAll(PDO::FETCH_OBJ);
-    }
-
-    //* Valider modification d'un livre
-    public function get_traitement_edit_livre()
-    {
-        $id = $_GET['id'];
-        $ISBN = $_POST['isbn'];
-        $Titre = $_POST['titre'];
-        $Theme = $_POST['theme'];
-        $NombrePages = $_POST['nbpages'];
-        $Format = $_POST['format'];
-        $Nom = $_POST['nom'];
-        $Prenom = $_POST['prenom'];
-        $Editeur = $_POST['editeur'];
-        $Annee = $_POST['annee'];
-        $Prix = $_POST['prix'];
-        $Langue = $_POST['langue'];
-        $r = $this->bd->prepare("UPDATE `livres` SET `ISBN`=:isbn, `Titre`=:titre, `Theme`=:theme, `Nb_pages`=:nbpages, `Format`=:format, `Nom_auteur`=:nom, `Prenom_auteur`=:prenom, `Editeur`=:editeur, `Annee_edition`=:annee, `Prix`=:prix, `Langue`=:langue WHERE id=:id");
-        $r->bindParam(':isbn', $ISBN);
-        $r->bindParam(':titre', $Titre);
-        $r->bindParam(':theme', $Theme);
-        $r->bindParam(':nbpages', $NombrePages);
-        $r->bindParam(':format', $Format);
-        $r->bindParam(':nom', $Nom);
-        $r->bindParam(':prenom', $Prenom);
-        $r->bindParam(':editeur', $Editeur);
-        $r->bindParam(':annee', $Annee);
-        $r->bindParam(':prix', $Prix);
-        $r->bindParam(':langue', $Langue);
-        $r->bindParam(':id', $id);
-        $r->execute();
-
-        return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
     //* Affichage titres
@@ -255,44 +200,6 @@ class Model
         $r->bindParam(':Prix', $Prix);
         $r->bindParam(':Langue', $Langue);
         $r->execute();
-    }
-
-    //* Inserer un fournisseur
-    public function get_traitement_insert_fournisseur()
-    {
-        $code = $_POST['code'];
-        $rsociale = $_POST['rsociale'];
-        $rue = $_POST['rue'];
-        $cp = $_POST['cp'];
-        $localite = $_POST['localite'];
-        $pays = $_POST['pays'];
-        $tel = $_POST['tel'];
-        $lien = $_POST['url'];
-        $email = $_POST['email'];
-        $fax = $_POST['fax'];
-        $r = $this->bd->prepare("INSERT INTO `fournisseur`(`code_fournisseur`, `raison_sociale`, `rue_fournisseur`, `code_postal`, `localite`, `pays`, `tel_fournisseur`, `url_fournisseur`, `email_fournisseur`, `fax_fournisseur`) 
-        VALUES (:code, :rsociale, :rue, :cp, :localite, :pays, :tel, :lien, :email, :fax)");
-        $r->bindParam(':code', $code);
-        $r->bindParam(':rsociale', $rsociale);
-        $r->bindParam(':rue', $rue);
-        $r->bindParam(':cp', $cp);
-        $r->bindParam(':localite', $localite);
-        $r->bindParam(':pays', $pays);
-        $r->bindParam(':tel', $tel);
-        $r->bindParam(':lien', $lien);
-        $r->bindParam(':email', $email);
-        $r->bindParam(':fax', $fax);
-        $r->execute();
-    }
-
-    public function get_all_commandes()
-    {
-
-        $r = $this->bd->prepare("SELECT * FROM commande");
-        $r->execute();
-
-        return $r->fetchAll(PDO::FETCH_OBJ);
-
     }
 
 }

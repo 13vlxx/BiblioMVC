@@ -20,42 +20,6 @@ class Controller_livre extends Controller
         $this->render("all_livres", $data);
     }
 
-    //* Formulaire de modification d'livre
-    public function action_edit_livre()
-    {
-        $id = $_GET['id'];
-        $m = Model::get_model();
-        $data = ['livre' => $m->get_edit_livre($id)];
-        $this->render("edit_livre_form", $data);
-    }
-
-    //* Valider modification d'un livre
-    public function action_traitement_edit_livre()
-    {
-
-        if (isset($_POST['submit'])) {
-            $m = Model::get_model();
-            $m->get_traitement_edit_livre();
-            $data = ["livres" => $m->get_all_livres()];
-            $this->render("all_livres", $data);
-        } else {
-            $this->render("edit_livre");
-        }
-    }
-
-
-    //* Supprimer un livre
-
-    public function action_delete_livre()
-    {
-        $id = $_GET['id'];
-        $m = Model::get_model();
-        $m->get_delete_livre($id);
-        $livres = $m->get_all_livres();
-        $data = ['livres' => $livres];
-        $this->render("all_livres", $data);
-    }
-
     //* Recupere tout les titres dans le select
     public function action_all_titres()
     {
