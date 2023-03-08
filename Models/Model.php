@@ -22,7 +22,6 @@ class Model
 
     }
 
-
     // get_model()
 
     public static function get_model()
@@ -37,6 +36,17 @@ class Model
     {
 
         $r = $this->bd->prepare("SELECT * FROM livres");
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+
+    }
+
+    public function get_delete_livre($id)
+    {
+        $id = $_GET['id'];
+        $r = $this->bd->prepare("DELETE FROM livres WHERE id = :id");
+        $r->bindParam(':id', $id);
         $r->execute();
 
         return $r->fetchAll(PDO::FETCH_OBJ);

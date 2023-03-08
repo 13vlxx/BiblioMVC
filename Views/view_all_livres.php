@@ -15,21 +15,50 @@ Résultat de votre recherche :
 			<th>Année d'édition</th>
 			<th>Prix</th>
 			<th>Langue</th>
+			<th>Modifier</th>
+			<th>Supprimer</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php foreach ($livres as $l): ?>
 			<tr>
-				<td> <?= $l->ISBN ?> </td>
-				<td> <?= $l->Titre ?> </td>
-				<td> <?= $l->Theme ?> </td>
-				<td> <?= $l->Nb_pages ?> </td>
-				<td> <?= $l->Format ?> </td>
-				<td> <?= $l->Nom_auteur ?> 	<?= $l->Prenom_auteur ?></td>
-				<td> <?= $l->Editeur ?> </td>
-				<td> <?= $l->Annee_edition ?> </td>
-				<td> <?= $l->Prix ?> </td>
-				<td> <?= $l->Langue ?> </td>
+				<td>
+					<?= $l->ISBN ?>
+				</td>
+				<td>
+					<?= $l->Titre ?>
+				</td>
+				<td>
+					<?= $l->Theme ?>
+				</td>
+				<td>
+					<?= $l->Nb_pages ?>
+				</td>
+				<td>
+					<?= $l->Format ?>
+				</td>
+				<td>
+					<?= $l->Nom_auteur ?>
+					<?= $l->Prenom_auteur ?>
+				</td>
+				<td>
+					<?= $l->Editeur ?>
+				</td>
+				<td>
+					<?= $l->Annee_edition ?>
+				</td>
+				<td>
+					<?= $l->Prix ?>
+				</td>
+				<td>
+					<?= $l->Langue ?>
+				</td>
+				<td>
+					<?= "<a href='?id=" . $l->Id . "'>📝</a>" ?>
+				</td>
+				<td>
+					<?= "<a href='?controller=livre&action=delete_livre&id=" . $l->Id . "'>🗑️</a>" ?>
+				</td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>

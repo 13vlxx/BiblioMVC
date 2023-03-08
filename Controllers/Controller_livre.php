@@ -20,6 +20,18 @@ class Controller_livre extends Controller
         $this->render("all_livres", $data);
     }
 
+    //* Supprimer un livre
+
+    public function action_delete_livre()
+    {
+        $id = $_GET['id'];
+        $m = Model::get_model();
+        $m->get_delete_livre($id);
+        $livres = $m->get_all_livres();
+        $data = ['livres' => $livres];
+        $this->render("all_livres", $data);
+    }
+
     //* Recupere tout les titres dans le select
     public function action_all_titres()
     {

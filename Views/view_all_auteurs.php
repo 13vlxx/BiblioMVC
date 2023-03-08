@@ -2,7 +2,7 @@
     <main>
         <form action="?controller=livre&action=all_auteurs_list" method="post">
             <select name="titre" id="select">
-                <option value="#" disabled selected>Saissisez le titre</option>
+                <option value="#" disabled selected>Saissisez l'auteur</option>
 
                 <?php foreach ($auteurs as $t): ?>
                     <option value="<?= $t->Nom_auteur ?>"><?= $t->Nom_auteur ?></option>
