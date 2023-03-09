@@ -16,18 +16,19 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Content/css/main.css">
     <link rel="stylesheet" type="text/css" href="Content/css/style.css">
+    <script src='Content/js/app.js' defer></script>
     <title>Index</title>
 </head>
 
 <body>
     <?php
+    session_start();
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    require_once 'Utils/header.php';
     echo "<div class='infos'><h6> Controller : " . $_GET['controller'] . '</h6>' . "<br>";
     echo "<h6> Action : " . $_GET['action'] . '</h6> </div>' . "<br>";
 
-    $controllers = ["home", "livre", "fournisseur", "commande"];
+    $controllers = ["home", "login", "sign_up"];
     $controller_default = "home";
 
     if (isset($_GET['controller']) and in_array($_GET['controller'], $controllers)) {
@@ -38,6 +39,7 @@
 
     $nom_classe = "Controller_" . $nom_controller;
     $nom_fichier = "Controllers/" . $nom_classe . ".php";
+
 
     if (file_exists($nom_fichier)) {
         require_once($nom_fichier);

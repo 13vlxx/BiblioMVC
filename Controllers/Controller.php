@@ -17,8 +17,18 @@ abstract class Controller
 
     protected function render($vue, $data = [])
     {
-        extract($data);
-        $file_name = "Views/view_" . $vue . ".php";
+        /* extract($data); */
+        /* $basePath = ""; */
+        // vérifier si on a un admin en session
+        /* if ($_SESSION["isAdmin"] === 1) { */
+        //die("User is Admin");
+/*             $basePath = "admin/";
+       } *//*  else {
+        $basePath = "user/";
+        } */
+        // si oui on render à partir de "admin/Views/view_..."
+        // sinon :
+        $file_name = /*  $basePath .  */"Views/view_" . $vue . ".php";
         if (file_exists($file_name)) {
             require($file_name);
         } else {

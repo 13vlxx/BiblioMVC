@@ -15,80 +15,69 @@ body {
   color: white;
 }
 
-header {
-  border-bottom: 1px solid white;
-  background-color: #001e3b;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
+button,
+input[type="submit"] {
+  cursor: pointer;
 }
 
-p {
-  font-style: italic;
+h3 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin: 0;
 }
 
-footer {
-  grid-row: 19;
+nav {
+  background-color: rgb(48, 96, 255);
+  height: 8vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+i {
+  color: white;
+  font-size: 2rem;
+}
+
+a {
+  color: rgb(48, 96, 255);
 }
 
 .form {
   display: flex;
-  height: 80vh;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+}
+
+form {
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  width: 80vw;
+}
+
+input[type="submit"] {
+  background-color: rgb(48, 96, 255);
+  border: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+table {
   text-align: right;
 }
 
-#ajl {
-  font-weight: 100;
-  font-size: 2rem;
-}
-
-input[type="text"] {
-  width: 20rem;
-  margin-bottom: 0.4rem;
-}
-
+h3,
+p,
 label {
-  margin-right: 100px;
-  text-align: left;
-}
-
-.submit {
-  text-align: center;
-}
-.bord {
-  color: white;
-  font-size: 125%;
-  font-style: italic;
-  text-decoration: underline;
-}
-
-#titre {
-  font-size: 250%;
-  font-weight: bold;
-}
-
-.bg_table {
-  background-color: #0000005f;
-  color: white;
-}
-
-.infos {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-}
-
-h6 {
-  z-index: 100;
-  color: white;
-  margin-right: 2rem;
+  color: black;
 }
